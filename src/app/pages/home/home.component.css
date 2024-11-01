@@ -1,0 +1,266 @@
+#brand{
+    color: #fdc100;
+}
+
+#brandName{
+  margin-top: 130px; 
+  font-family: fantasy; 
+  color: white;
+}
+p{
+    font-size: larger;
+    font-weight: 600;
+    color: white;
+}
+.home {
+  width: 100%;
+  height: 610px;
+}
+
+#homeContent {
+  padding-left: 150px;
+}
+
+#carImage {
+  max-width: 100%;
+  height: 600px;
+}
+
+#easily{
+  font-size: 15vw;
+}
+
+@media (max-width: 817px) {
+  .home {
+      height: auto;
+  }
+  #homeContent {
+      padding-left: 0;
+      text-align: center;
+  }
+  #imageContainer {
+      margin-top: 20px;
+  }
+  #carImage {
+      height: auto;
+  }
+}
+
+/* ================second section======== */
+
+#sectionTwo{
+  background-color: #212529;
+}
+
+.preH1{
+  font-size: 2vw;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 7vw;
+}
+
+.presentage{
+  color: #fdc100;
+}
+
+.preService{
+  color: white;
+}
+
+#ourservoces{
+  color: white;
+  text-align: left;
+  margin-top: 7vw;
+  font-size: 1.3vw;
+}
+.ourServiceP{
+  font-weight: 100;
+  font-size: 1vw;
+  color: #eed68a;
+}
+
+/* ================ Third Section ========== */
+
+#sectionThree {
+  background-color: black;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+/* ====== Card Styles ====== */
+.card {
+  width: 280px;
+  height: 354px;
+  background: #212529;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  font-size: 30px;
+  font-weight: 900;
+  margin: 10px;
+}
+
+.card:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  background: #212529;
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+}
+
+.card:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1.8rem;
+  transform: rotate(0deg);
+}
+
+#cardCar, #cardCar1, #cardCar2 {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========= Section Four =========== */
+
+#sectionFour {
+  background-color: #212529;
+  padding: 3vw 0;
+}
+
+.details {
+  margin: 3vw 10vw;
+}
+
+#footer1, .contact, .list-unstyled {
+  color: white;
+}
+
+.contact {
+  margin-top: 90px;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.list-unstyled {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  align-content: center;
+  margin-top: 70px;
+}
+
+@media (max-width: 1169px) {
+  .card {
+    height: 254px;
+    width: 180px;
+  }
+  #carImg {
+    width: 160px;
+    height: 234px;
+  }
+}
+
+@media (max-width: 925px) {
+  #cardCar, #cardCar1, #cardCar2 {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 840px) {
+  #cardCar, #cardCar1, #cardCar2 {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 770px) {
+  #cardCar, #cardCar1, #cardCar2 {
+    margin-top: 30px;
+  }
+  .card {
+    height: 154px;
+    width: 90px;
+  }
+  #carImg {
+    width: 70px;
+    height: 134px;
+  }
+  #sectionFour .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3vw;
+  }
+
+  #sectionFour .col-3 {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .contact, .list-unstyled {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  #sectionThree {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    height: 254px;
+    width: 180px;
+  }
+  #carImg {
+    width: 160px;
+    height: 234px;
+  }
+
+  .col-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    margin: 5vw 3vw;
+  }
+  #sectionFour{
+    flex-direction: column;
+    align-items: center;
+  }
+}
