@@ -1,0 +1,78 @@
+.about{
+    background-color: black;
+    height: 60vw;
+}
+
+#brand{
+    color: #fdc100;
+}
+#aboutUs{
+    margin-top: 6vw;
+    margin-left: 8.5vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 200;
+    color: white;
+    z-index: 1;
+}
+
+#brandName {
+    margin-top: 8vw;
+    margin-left: 8.5vw;
+    font-family: fantasy;
+    color: white;
+    z-index: 1;
+}
+
+p{
+    color: rgb(91, 86, 86);
+    font-weight:20 ;
+}
+#thirdSection{
+    position: relative;
+    background-color: black;
+    height: 50vw;
+    margin-top: 12vw;
+}
+#aboutImageTwo{
+    margin-top: 5vw;
+}
+#aboutDescription{
+    margin-top: 5vw;
+}
+#descOne{
+    color: white;
+}
+#descTwo{
+    color: #b08b12;
+}
+
+@media(max-width: 550px) {
+    #aboutUs{
+        font-size: 10px;  
+    }
+    
+    #brandName {
+        font-size: 20px;
+    }
+}
+@media(max-width: 1100px) {
+    #descOne,#descTwo{
+        font-size: 2vw;
+    }
+    p{
+        font-size: 1.2vw;
+    }
+}
+@media(max-width: 450px) {
+    #thirdSection {
+        flex-direction: column; 
+        align-items: center; 
+        height: auto;
+    }
+    #descOne,#descTwo{
+        font-size: 3vw;
+    }
+    p{
+        font-size: 2.2vw;
+    }
+}
