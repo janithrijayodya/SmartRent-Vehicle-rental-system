@@ -1,0 +1,17 @@
+
+   .container-fluid{
+      background-color: #212529;
+   }
+   h5{
+    color: white;
+   }
+   p{
+    color: white;
+   }
+   #listItem{
+    color: #a8aaac;
+   }
+   .row{
+    width: 90%;
+    margin-left: 70px;
+   }

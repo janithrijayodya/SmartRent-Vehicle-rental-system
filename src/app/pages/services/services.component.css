@@ -1,0 +1,45 @@
+.services{
+    overflow-x: hidden;
+}
+
+#thirdSection{
+    position: relative;
+    background-color: black;
+    height: 40vw;
+    margin-top: 12vw;
+    overflow-x: hidden;
+}
+#brand{
+    color: #fdc100;
+}
+#brandName {
+    margin-top: 8vw;
+    margin-left: 8.5vw;
+    font-family: fantasy;
+    color: white;
+    z-index: 1;
+}
+#aboutUs{
+    margin-top: 6vw;
+    margin-left: 8.5vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 200;
+    color: white;
+    z-index: 1;
+}
+
+#service{
+    color: rgb(255, 255, 255);
+    margin-left: 30px;
+}
+p{
+    color: rgb(62, 63, 65);
+    margin-left: 30px;
+}
+h2{
+    color: rgb(62, 63, 65);
+    margin-left: 30px;
+}
+#offerTitle{
+    color: #907315;
+}

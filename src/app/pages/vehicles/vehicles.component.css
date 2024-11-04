@@ -1,0 +1,26 @@
+
+#brand{
+    color: #fdc100;
+}
+
+#brandName{
+  margin-top: 100px; 
+  font-family: fantasy; 
+  color: white;
+  margin-left: 20px;
+}
+h3{
+    margin-top: 100px;
+    color: white;
+}
+
+h6{
+    color:#5c5b59;
+}
+p{
+    color: aliceblue;
+}
+#secondSection{
+    margin-left: 20px;
+    height: 100vw;
+}

@@ -1,6 +1,7 @@
 .about{
     background-color: black;
-    height: 60vw;
+    height: 100vw;
+    overflow-x: hidden;
 }
 
 #brand{
@@ -30,8 +31,9 @@ p{
 #thirdSection{
     position: relative;
     background-color: black;
-    height: 50vw;
+    height: 40vw;
     margin-top: 12vw;
+    overflow-x: hidden;
 }
 #aboutImageTwo{
     margin-top: 5vw;
@@ -69,10 +71,24 @@ p{
         align-items: center; 
         height: auto;
     }
+    #aboutDescription, #aboutImageTwo {
+        width: 90%; 
+        margin: 2vw auto; 
+        text-align: center;
+    }
     #descOne,#descTwo{
         font-size: 3vw;
     }
     p{
         font-size: 2.2vw;
+        font-weight: 100;
+    }
+}
+@media(max-width: 450px) {
+    /* Ensure no additional bottom space on smaller screens */
+    #thirdSection, .about, footer {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        height: auto;
     }
 }
