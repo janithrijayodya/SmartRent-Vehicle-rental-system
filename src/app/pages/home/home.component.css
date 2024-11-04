@@ -129,24 +129,24 @@ p{
 }
 
 .card-front {
-  background-color: #6A2C70;
+  background-color: black;
   color: #fff;
   display: flex;
   align-items: center;
-  border: 10px solid #6A2C70;
-  border-radius: 10px;
+  /* border: 10px solid black; */
+  /* border-radius: 10px; */
   justify-content: center;
   font-size: 24px;
   transform: rotateY(0deg);
 }
 
 .card-back {
-  background-color: #F08A5D;
+  background-color: black;
   color: #fff;
   display: flex;
   align-items: center;
-  border: 10px solid #F08A5D;
-  border-radius: 10px;
+  /* border: 10px solid black; */
+  /* border-radius: 10px; */
   justify-content: center;
   font-size: 24px;
   transform: rotateY(180deg);
@@ -154,21 +154,13 @@ p{
 
 
 #cardCar, #cardCar1, #cardCar2 {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 1169px) {
-  .card {
-    height: 254px;
-    width: 180px;
-  }
-  #carImg {
-    width: 160px;
-    height: 234px;
-  }
-}
+
 
 @media (max-width: 925px) {
   #cardCar, #cardCar1, #cardCar2 {
@@ -189,10 +181,6 @@ p{
   .card {
     height: 154px;
     width: 90px;
-  }
-  #carImg {
-    width: 70px;
-    height: 134px;
   }
   #sectionFour .details {
     display: flex;
@@ -218,14 +206,9 @@ p{
     align-items: center;
   }
   .card {
-    height: 254px;
-    width: 180px;
+    margin-bottom: 20px; 
   }
-  #carImg {
-    width: 160px;
-    height: 234px;
-  }
-
+  
   .col-4 {
     width: 100%;
     margin-bottom: 20px;
