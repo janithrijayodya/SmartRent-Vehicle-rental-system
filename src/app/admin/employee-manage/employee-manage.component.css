@@ -3,7 +3,7 @@
     width: 80%;
     border-radius: 20px;
 }
-#VehicleForm{
+#EmployeeForm{
     margin-top: 30px;
 }
 #brandName {
@@ -20,10 +20,10 @@
     background-color: #c0c0c0;
     color:black;
 }
-.vehicle{
+.employee{
     background-color: #333333;
 }
-#txtVehicle{
+#txtemployee{
     background-color: #333333;
     color: white;
 }
@@ -31,7 +31,7 @@
     color: white;
 }
 
-#vehiclesTable{
+#employeeTable{
     justify-content: baseline;
     margin-top: 2vw;
 

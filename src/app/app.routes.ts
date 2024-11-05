@@ -9,6 +9,8 @@ import { LoginComponent } from './admin/login/login.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { CustomerComponent } from './admin/customer_manage/customer.component';
 import { VehicleManageComponent } from './admin/vehicle-manage/vehicle-manage.component';
+import { EmployeeManageComponent } from './admin/employee-manage/employee-manage.component';
+import { BranchManageComponent } from './admin/branch-manage/branch-manage.component';
 
 export const routes: Routes = [
     {
@@ -46,6 +48,14 @@ export const routes: Routes = [
     {
         path: 'vehicleManage',
         component : VehicleManageComponent
+    },
+    {
+        path: 'employeeManage',
+        component: EmployeeManageComponent
+    },
+    {
+        path: 'branchManage',
+        component: BranchManageComponent
     }
 
 ];

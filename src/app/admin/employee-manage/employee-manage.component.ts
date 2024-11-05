@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { AdminHeaderComponent } from '../admin-header/admin-header.component';
 
 @Component({
-  selector: 'app-vehicle-manage',
+  selector: 'app-employee-manage',
   standalone: true,
   imports: [AdminHeaderComponent],
-  templateUrl: './vehicle-manage.component.html',
-  styleUrl: './vehicle-manage.component.css'
+  templateUrl: './employee-manage.component.html',
+  styleUrl: './employee-manage.component.css'
 })
-export class VehicleManageComponent {
+export class EmployeeManageComponent {
 
 }

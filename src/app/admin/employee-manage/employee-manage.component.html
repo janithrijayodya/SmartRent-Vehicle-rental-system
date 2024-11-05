@@ -1,4 +1,4 @@
-<div class="vehicle">
+<div class="employee">
     <div class="row">
         <app-admin-header></app-admin-header>
     </div>
@@ -12,19 +12,19 @@
         <div class="col-6">
             <div class="container">
                 <main>
-                    <div class="row g-5" id="VehicleForm">
+                    <div class="row g-5" id="EmployeeForm">
                         <div class="col-md-12 col-lg-12">
                             <form class="needs-validation" novalidate>
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <label for="customerID" class="form-label">ID</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
                                             required>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <label for="lastName" class="form-label">No:plate</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        <label for="lastName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
                                             required>
                                         <div class="invalid-feedback">
                                             Valid last name is required.
@@ -32,8 +32,8 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <label for="license" class="form-label">Model</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        <label for="license" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
                                             required>
                                         <div class="invalid-feedback">
                                             Valid first name is required.
@@ -41,8 +41,8 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <label for="contactNo" class="form-label">Year</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        <label for="contactNo" class="form-label">Contact No</label>
+                                        <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
                                             required>
                                         <div class="invalid-feedback">
                                             Valid last name is required.
@@ -50,42 +50,36 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <label for="contactNo" class="form-label">Colour</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        <label for="contactNo" class="form-label">Position</label>
+                                        <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
                                             required>
                                         <div class="invalid-feedback">
                                             Valid last name is required.
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-md-4">
                                         <label for="state" class="form-label">Branch</label>
-                                        <select class="form-select" id="state" required id="txtVehicle">
+                                        <select class="form-select" id="state" required id="txtemployee">
                                             <option value="">Choose...</option>
-                                            <option>matara</option>
-                                            <option>colombo</option>
+                                            <option>Colombo</option>
+                                            <option>Matara</option>
+                                            <option>Kandy</option>
+                                            <option>Jaffna</option>
+                                            <option>Gampaha</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Please provide a valid state.
                                         </div>
                                     </div>
-
-                                    <div class="col-12">
-                                        <label for="email" class="form-label">Description</label>
-                                        <input type="email" class="form-control" id="txtVehicle" placeholder="">
-                                        <div class="invalid-feedback">
-                                            Please enter a valid email address for shipping updates.
-                                        </div>
-                                    </div>
-
                                 </div>
 
                                 <hr class="my-4">
 
-                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">ADD 
-                                    VEHICLE</button><br><br>
-                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">SEARCH 
-                                    VEHICLE</button>
+                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">ADD
+                                    EMPLOYEE</button><br><br>
+                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">SEARCH
+                                    EMPLOYEE</button>
                             </form>
                         </div>
                     </div>
@@ -95,14 +89,13 @@
         </div>
 
         <div class="col-6">
-            <table class="table" id="vehiclesTable">
+            <table class="table" id="employeeTable">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Model</th>
-                        <th scope="col">No:plate</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Branch</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -110,7 +103,6 @@
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
-                        <td>j</td>
                         <td>j</td>
                     </tr>
                 </tbody>
