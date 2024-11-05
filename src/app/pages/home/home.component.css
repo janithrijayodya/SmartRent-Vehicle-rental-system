@@ -8,7 +8,7 @@
   color: white;
 }
 #FirstSectionDesc{
-    font-size: larger;
+    font-size: medium;
     font-weight: 600;
     color: white;
 }
@@ -44,6 +44,10 @@
   #carImage {
       height: auto;
   }
+}
+
+.btn-group{
+  margin-left: 7px;
 }
 
 /* ================second section======== */

@@ -1,0 +1,42 @@
+.container{
+    background-color:#4d4d4d;
+    width: 80%;
+    border-radius: 20px;
+}
+#CustomerForm{
+    margin-top: 30px;
+}
+#brandName {
+    margin-top: 3vw;
+    font-family: fantasy;
+    color: white;
+    z-index: 1;
+    margin-left: 5vw;
+}
+#brand{
+    color: #fdc100;
+}
+#btn{
+    background-color: #c0c0c0;
+    color:black;
+}
+.customer{
+    background-color: #333333;
+}
+#txtcustomer{
+    background-color: #333333;
+    color: white;
+}
+.form-label{
+    color: white;
+}
+
+#customerTable{
+    justify-content: baseline;
+    margin-top: 2vw;
+
+}
+.col-6 {
+    padding-right: 30px; 
+}
+

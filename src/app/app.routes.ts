@@ -4,6 +4,11 @@ import { AboutComponent } from './pages/about/about.component';
 import { VehiclesComponent } from './pages/vehicles/vehicles.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
+import { LoginComponent } from './admin/login/login.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { CustomerComponent } from './admin/customer_manage/customer.component';
+import { VehicleManageComponent } from './admin/vehicle-manage/vehicle-manage.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +30,22 @@ export const routes: Routes = [
     {
         path:'contact',
         component:ContactComponent
+    },
+    {
+        path:'admin',
+        component:LoginComponent
+    },
+    {
+        path: 'adminHome',
+        component: AdminHomeComponent
+    },
+    {
+        path : 'customerManage',
+        component:CustomerComponent
+    },
+    {
+        path: 'vehicleManage',
+        component : VehicleManageComponent
     }
+
 ];

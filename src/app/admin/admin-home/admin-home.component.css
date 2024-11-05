@@ -1,0 +1,47 @@
+#brand{
+    color: #fdc100;
+}
+
+#brandName{
+  margin-top: 130px; 
+  font-family: fantasy; 
+  color: white;
+}
+#FirstSectionDesc{
+    font-size: medium;
+    font-weight: 600;
+    color: white;
+}
+.home {
+  width: 100%;
+  height: 690px;
+}
+
+#homeContent {
+  padding-left: 150px;
+}
+
+#carImage {
+  max-width: 100%;
+  height: 600px;
+}
+
+#easily{
+  font-size: 15vw;
+}
+
+@media (max-width: 817px) {
+  .home {
+      height: auto;
+  }
+  #homeContent {
+      padding-left: 0;
+      text-align: center;
+  }
+  #imageContainer {
+      margin-top: 20px;
+  }
+  #carImage {
+      height: auto;
+  }
+}
