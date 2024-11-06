@@ -1,1 +1,89 @@
-<p>branch-manage works!</p>
+<div class="branch">
+    <div class="row">
+        <app-admin-header></app-admin-header>
+    </div>
+
+    <div class="row">
+        <h1 class="text-left" id="brandName">SMART<span id="brand">RENT</span></h1>
+    </div>
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="container">
+                <main>
+                    <div class="row g-5" id="branchForm">
+                        <div class="col-md-12 col-lg-12">
+                            <form class="needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <label for="customerID" class="form-label">ID</label>
+                                        <input type="text" class="form-control" id="txtbranch" placeholder="" value=""
+                                            required>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label for="lastName" class="form-label">Location</label>
+                                        <input type="text" class="form-control" id="txtbranch" placeholder="" value=""
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Valid last name is required.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label for="license" class="form-label">Email</label>
+                                        <input type="text" class="form-control" id="txtbranch" placeholder="" value=""
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Valid first name is required.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label for="contactNo" class="form-label">Contact No</label>
+                                        <input type="text" class="form-control" id="txtbranch" placeholder="" value=""
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Valid last name is required.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">ADD
+                                    BRANCH</button><br><br>
+                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">SEARCH
+                                    BRANCH</button>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <table class="table" id="branchTable">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Contact</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>j</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -11,6 +11,8 @@ import { CustomerComponent } from './admin/customer_manage/customer.component';
 import { VehicleManageComponent } from './admin/vehicle-manage/vehicle-manage.component';
 import { EmployeeManageComponent } from './admin/employee-manage/employee-manage.component';
 import { BranchManageComponent } from './admin/branch-manage/branch-manage.component';
+import { RentalsComponent } from './admin/rentals/rentals.component';
+import { PreviouseRentalsComponent } from './admin/previouse-rentals/previouse-rentals.component';
 
 export const routes: Routes = [
     {
@@ -56,6 +58,14 @@ export const routes: Routes = [
     {
         path: 'branchManage',
         component: BranchManageComponent
+    },
+    {
+        path: 'rental',
+        component: RentalsComponent
+    },
+    {
+        path: 'previouseRentals',
+        component: PreviouseRentalsComponent
     }
 
 ];
