@@ -15,6 +15,7 @@ export class EmployeeManageComponent {
 
   constructor(private http:HttpClient){
     this.loadBranches();
+    this.getAllEmployees();
   }
 
   // ===========LOAD BRANCHES===========
@@ -41,13 +42,19 @@ export class EmployeeManageComponent {
   public addEmployee(){
     this.http.post(" http://localhost:8080/employee/add_employee",this.employee).subscribe(data=>{
       alert("Employee has been added !");
+      this.getAllEmployees();
+      this.loadBranches();
     })
   }
 
   // ========== DELETE EMPLOYEE ==========
 
-  public deleteEmployee(){
-    // this.http.delete(" http://localhost:8080/employee/delete_employee_by_id/1")
+  public deleteEmployee(employeeID:any){
+    this.http.delete(`http://localhost:8080/employee/delete_employee_by_id/${employeeID}`).subscribe(data=>{
+      alert("Employee has been deleted !");
+      this.getAllEmployees();
+      this.loadBranches();
+    })
   }
 
 
@@ -56,6 +63,37 @@ export class EmployeeManageComponent {
 
   public employeeList:any =[];
 
-  // create get all employee in beck end
+  public getAllEmployees(){
+    this.http.get(" http://localhost:8080/employee/get_all").subscribe(data=>{
+      this.employeeList=data;
+    })
+  }
+
+  // =========== UPDATE EMPLOYEE============
+
+  public searchedEmployee:any ={};
+
+  public viewSearchedEmployee(employee:any){
+      this.searchedEmployee=employee;
+  }
+
+  public updateEmployee(){
+    this.http.put(" http://localhost:8080/employee/update_employee",this.searchedEmployee).subscribe(data=>{
+      this.getAllEmployees();
+      this.loadBranches();
+    })
+  }
+
+  // ============SEARCH EMPLOYEE =============
+
+  public nic:any ;
+
+  public searchedEmployeeObject:any={};
+
+  public searchEmployeeByNIC(){
+    this.http.get(`http://localhost:8080/employee/search_employee_by_nic/${this.nic}`).subscribe(data=>{
+        this.searchedEmployeeObject=data;
+    })
+  }
 
 }
