@@ -16,12 +16,19 @@
 #brand{
     color: #fdc100;
 }
+#category{
+  font-family: fantasy;
+  color: white;
+  z-index: 1;
+  margin-left: 5vw;
+}
 #btn{
     background-color: #c0c0c0;
     color:black;
 }
 .employee{
     background-color: #333333;
+    height: 45vw;
 }
 #txtemployee{
     background-color: #333333;

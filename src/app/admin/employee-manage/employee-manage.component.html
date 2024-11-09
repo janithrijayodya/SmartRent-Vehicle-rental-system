@@ -6,6 +6,7 @@
     <div class="row">
         <div class="col-3">
             <h1 class="text-left" id="brandName">SMART<span id="brand">RENT</span></h1>
+            <h3 id="category">EMPLOYEE</h3>
         </div>
         <div class="col-9">
             <div class="search">
@@ -84,7 +85,7 @@
                                         <label for="state" class="form-label">Branch</label>
                                         <select class="form-select" id="state" required id="txtemployee"  [(ngModel)]="employee.branchID" [(ngModel)]="searchedEmployeeObject.branchID">
                                             <option value="">Choose...</option>
-                                            <option value="" *ngFor="let branch of branchList" [value]="branch.branchID">{{branch.branchID}}</option>
+                                            <option value="" *ngFor="let branch of branchList" [value]="branch.branchID">{{branch.location}}</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Please provide a valid state.
@@ -96,8 +97,6 @@
 
                                 <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn" (click)="addEmployee()">ADD
                                     EMPLOYEE</button><br><br>
-                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn">SEARCH
-                                    EMPLOYEE</button>
                             <!-- </form> -->
                         </div>
                     </div>

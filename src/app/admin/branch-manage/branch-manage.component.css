@@ -13,6 +13,12 @@
     z-index: 1;
     margin-left: 5vw;
 }
+#category{
+  font-family: fantasy;
+  color: white;
+  z-index: 1;
+  margin-left: 5vw;
+}
 #brand{
     color: #fdc100;
 }
