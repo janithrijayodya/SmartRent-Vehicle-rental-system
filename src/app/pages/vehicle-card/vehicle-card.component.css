@@ -1,18 +1,20 @@
-.card-body{
-    background-color: rgb(41, 42, 42);
-    border: none;
+p{
+    color: black;
+    font-weight: 500;
 }
-.card-text{
-    color: white;
+#price{
+    color: goldenrod;
+    font-weight: 700;
 }
-.container{
-    width: 100%;
+#status{
+    color: goldenrod;
+    font-weight: 500;
 }
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Optional: Adds space between cards */
+#desc{
+    color: black;
+    font-weight: 400;
 }
-.col-12 {
-    flex: 1 1 250px; /* Allows cards to be at least 250px wide and wrap */
+h5{
+    color: darkgoldenrod;
+    font-weight: 700;
 }

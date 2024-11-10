@@ -12,6 +12,12 @@
     background-color: #333333;
     height: 45vw;
 }
+#category{
+  font-family: fantasy;
+  color: white;
+  z-index: 1;
+  margin-left: 7vw;
+}
 #previouseRentalTable{
     justify-content: center;
     margin-top: 4vw;

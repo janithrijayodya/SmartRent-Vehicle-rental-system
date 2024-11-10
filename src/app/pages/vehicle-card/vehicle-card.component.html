@@ -1,16 +1,18 @@
-<div class="container">
-  <div class="row ">
-    <div class="col-4">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-          <div class="d-flex justify-content-between align-items-center">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Rent now</button>
-            <small class="text-body-secondary">9 mins</small>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ vehicleInformation.type }}</h5>
+        <p class="card-text " id="desc">{{vehicleInformation.description}}</p>
+        <p class="card-text mb-1">Year :{{vehicleInformation.year}}</p>
+        <p class="card-text mb-1">Colour :{{vehicleInformation.colour}}</p>
+        <p class="card-text mb-1">Model :{{vehicleInformation.model}}</p>
+        <p class="card-text mb-1" id="price">{{vehicleInformation.rentalPrice}}</p>
+        <p class="card-text mb-1" id="status">{{vehicleInformation.status}}</p>
+        <a href="#" class="btn btn-secondary">Rent now</a>
       </div>
     </div>
   </div>
 </div>
+
+<br>
