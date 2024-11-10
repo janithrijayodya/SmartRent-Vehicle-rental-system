@@ -17,7 +17,8 @@ export class BranchManageComponent {
     location :"" ,
     address : "",
     branchEmail : "",
-    branchContact : ""
+    branchContact : "",
+    password:""
   };
 
   constructor(private http:HttpClient){
