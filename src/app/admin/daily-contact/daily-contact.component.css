@@ -1,0 +1,26 @@
+#brandName {
+    margin-top: 3vw;
+    font-family: fantasy;
+    color: white;
+    z-index: 1;
+    margin-left: 7vw;
+}
+#brand{
+    color: #fdc100;
+}
+.preRentals{
+    background-color: #333333;
+    height: 45vw;
+}
+#category{
+  font-family: fantasy;
+  color: white;
+  z-index: 1;
+  margin-left: 7vw;
+}
+#previouseRentalTable{
+    justify-content: center;
+    margin-top: 4vw;
+    width: 80%;
+    margin-left: 10vw;    
+}

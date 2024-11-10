@@ -13,6 +13,7 @@ import { EmployeeManageComponent } from './admin/employee-manage/employee-manage
 import { BranchManageComponent } from './admin/branch-manage/branch-manage.component';
 import { RentalsComponent } from './admin/rentals/rentals.component';
 import { PreviouseRentalsComponent } from './admin/previouse-rentals/previouse-rentals.component';
+import { DailyContactComponent } from './admin/daily-contact/daily-contact.component';
 
 export const routes: Routes = [
     {
@@ -66,6 +67,10 @@ export const routes: Routes = [
     {
         path: 'previouseRentals',
         component: PreviouseRentalsComponent
+    },
+    {
+        path: 'dailyContacts',
+        component: DailyContactComponent
     }
 
 ];
