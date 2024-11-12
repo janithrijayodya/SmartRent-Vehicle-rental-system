@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CustomerHeaderComponent, FooterComponent],
+  imports: [CustomerHeaderComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })

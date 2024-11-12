@@ -3,7 +3,7 @@
         <app-admin-header></app-admin-header>
     </div>
 
-    
+
     <div class="row">
         <div class="col-3">
             <h1 class="text-left" id="brandName">SMART<span id="brand">RENT</span></h1>
@@ -15,7 +15,7 @@
                     <div class="search-field">
                         <input placeholder="Number plate" class="input" type="text" [(ngModel)]="NoPlate">
                         <div class="search-box-icon">
-                            <button class="btn-icon-content" (click)="searchByNoPlate()" >
+                            <button class="btn-icon-content" (click)="searchByNoPlate()">
                                 <i class="search-icon">
                                     <svg xmlns="://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
                                         <path
@@ -41,100 +41,111 @@
                     <div class="row g-5" id="VehicleForm">
                         <div class="col-md-12 col-lg-12">
                             <!-- <form class="needs-validation" novalidate> -->
-                                <div class="row g-3">
-                                    <div class="col-sm-6">
-                                        <label for="customerID" class="form-label">No:plate</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value="" [(ngModel)]="vehicle.noPlate" [(ngModel)]="searchedVehicleByNoPlate.noPlate"
-                                            required>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <label for="license" class="form-label">Model</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value="" [(ngModel)]="vehicle.model" [(ngModel)]="searchedVehicleByNoPlate.model"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid first name is required.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <label for="contactNo" class="form-label">Year</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value="" [(ngModel)]="vehicle.year" [(ngModel)]="searchedVehicleByNoPlate.year"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <label for="lastName" class="form-label">Colour</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value="" [(ngModel)]="vehicle.colour" [(ngModel)]="searchedVehicleByNoPlate.colour"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <label for="contactNo" class="form-label">Rental Price</label>
-                                        <input type="text" class="form-control" id="txtVehicle" placeholder="" value="" [(ngModel)]="vehicle.rentalPrice" [(ngModel)]="searchedVehicleByNoPlate.rentalPrice"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                        <label for="state" class="form-label">Type</label>
-                                        <select class="form-select" id="state" required id="txtVehicle"  [(ngModel)]="vehicle.type" [(ngModel)]="searchedVehicleByNoPlate.type">
-                                            <option value="">Choose...</option>
-                                            <option>Car</option>
-                                            <option>Van</option>
-                                            <option>Jip</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid state.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="state" class="form-label">Branch</label>
-                                        <select class="form-select" id="state" required id="txtVehicle"  [(ngModel)]="vehicle.branchID" [(ngModel)]="searchedVehicleByNoPlate.branch">
-                                            <option value="">Choose...</option>
-                                            <option *ngFor="let branch of branchList" [value]="branch.branchID">{{branch.location}}</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid state.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="state" class="form-label">Status</label>
-                                        <select class="form-select" id="state" required id="txtVehicle"  [(ngModel)]="vehicle.status" [(ngModel)]="searchedVehicleByNoPlate.status">
-                                            <option value="">Choose...</option>
-                                            <option>Available</option>
-                                            <option>Unavailable</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid state.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="email" class="form-label">Description</label>
-                                        <input type="email" class="form-control" id="txtVehicle" placeholder="" [(ngModel)]="vehicle.description" [(ngModel)]="searchedVehicleByNoPlate.description">
-                                        <div class="invalid-feedback">
-                                            Please enter a valid email address for shipping updates.
-                                        </div>
-                                    </div>
-
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="customerID" class="form-label">No:plate</label>
+                                    <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        [(ngModel)]="vehicle.noPlate" [(ngModel)]="searchedVehicleByNoPlate.noPlate"
+                                        required>
                                 </div>
 
-                                <hr class="my-4">
+                                <div class="col-sm-6">
+                                    <label for="license" class="form-label">Model</label>
+                                    <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        [(ngModel)]="vehicle.model" [(ngModel)]="searchedVehicleByNoPlate.model"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
 
-                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn" (click)="addVehicle()">ADD 
-                                    VEHICLE</button><br><br>
-                                
+                                <div class="col-sm-6">
+                                    <label for="contactNo" class="form-label">Year</label>
+                                    <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        [(ngModel)]="vehicle.year" [(ngModel)]="searchedVehicleByNoPlate.year" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label">Colour</label>
+                                    <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        [(ngModel)]="vehicle.colour" [(ngModel)]="searchedVehicleByNoPlate.colour"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="contactNo" class="form-label">Rental Price</label>
+                                    <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
+                                        [(ngModel)]="vehicle.rentalPrice"
+                                        [(ngModel)]="searchedVehicleByNoPlate.rentalPrice" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="state" class="form-label">Type</label>
+                                    <select class="form-select" id="state" required id="txtVehicle"
+                                        [(ngModel)]="vehicle.type" [(ngModel)]="searchedVehicleByNoPlate.type">
+                                        <option value="">Choose...</option>
+                                        <option>Car</option>
+                                        <option>Van</option>
+                                        <option>Jip</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="state" class="form-label">Branch</label>
+                                    <select class="form-select" id="state" required id="txtVehicle"
+                                        [(ngModel)]="vehicle.branchID" [(ngModel)]="searchedVehicleByNoPlate.branch">
+                                        <option value="">Choose...</option>
+                                        <option *ngFor="let branch of branchList" [value]="branch.branchID">
+                                            {{branch.location}}</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="state" class="form-label">Status</label>
+                                    <select class="form-select" id="state" required id="txtVehicle"
+                                        [(ngModel)]="vehicle.status" [(ngModel)]="searchedVehicleByNoPlate.status">
+                                        <option value="">Choose...</option>
+                                        <option>Available</option>
+                                        <option>Unavailable</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Description</label>
+                                    <input type="email" class="form-control" id="txtVehicle" placeholder=""
+                                        [(ngModel)]="vehicle.description"
+                                        [(ngModel)]="searchedVehicleByNoPlate.description">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <hr class="my-4">
+
+                            <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn"
+                                (click)="addVehicle()">ADD
+                                VEHICLE</button><br><br>
+
                             <!-- </form> -->
                         </div>
                     </div>
@@ -164,18 +175,18 @@
                         <td>{{vehicle.year}}</td>
                         <td>{{vehicle.status}}</td>
                         <td><button class="btn btn-danger" (click)="deleteVehicleByID(vehicle.vehicleID)"><i
-                            class="bi bi-trash3"></i></button></td>
-                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="viewSearchedVehicle(vehicle)"
-                        ><i class="bi bi-pencil-square"></i></button></td>
+                                    class="bi bi-trash3"></i></button></td>
+                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                (click)="viewSearchedVehicle(vehicle)"><i class="bi bi-pencil-square"></i></button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-      <!-- ======================================= UPDATING MODEL ===================================== -->
+    <!-- ======================================= UPDATING MODEL ===================================== -->
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -185,7 +196,8 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">No plate:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="searchedVehicle.noPlate">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedVehicle.noPlate">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Model:</label>
@@ -197,19 +209,22 @@
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Colour:</label>
-                        <input type="text" class="form-control" id="recipient-name"  [(ngModel)]="searchedVehicle.colour">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedVehicle.colour">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Rental Price:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="searchedVehicle.rentalPrice" >
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedVehicle.rentalPrice">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Description:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="searchedVehicle.description">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedVehicle.description">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Status:</label>
-                        <select class="form-select" id="state" required id=""  [(ngModel)]="searchedVehicle.status">
+                        <select class="form-select" id="state" required id="" [(ngModel)]="searchedVehicle.status">
                             <option value="">Choose...</option>
                             <option>Available</option>
                             <option>Unavailable</option>
@@ -217,9 +232,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Branch:</label>
-                        <select class="form-select" id="state" required id=""  [(ngModel)]="searchedVehicle.branchID">
+                        <select class="form-select" id="state" required id="" [(ngModel)]="searchedVehicle.branchID">
                             <option value="">Choose...</option>
-                            <option *ngFor="let branch of branchList" [value]="branch.branchID">{{branch.location}}</option>
+                            <option *ngFor="let branch of branchList" [value]="branch.branchID">{{branch.location}}
+                            </option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -231,10 +247,11 @@
                             <option>Jip</option>
                         </select>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="updateVehicle()">Update</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="updateVehicle()">Update</button>
                 </div>
             </div>
         </div>

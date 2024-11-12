@@ -51,12 +51,32 @@ public vehicle:any={
 }
 
 public addVehicle(){
-  this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle).subscribe(data=>{
-    alert("Vehicle has been added !");
-    this.getAllVehicles();
-    this.loadBranches();
-  })
-}
+  // this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle).subscribe(data=>{
+  //   alert("Vehicle has been added !");
+  //   this.getAllVehicles();
+  //   this.loadBranches();
+  // })
+
+  this.http.get(`http://localhost:8080/branch/search_by_branchID/${this.vehicle.branchID}`).subscribe(
+    data=>{
+      if(data){
+          this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle).subscribe(
+            (response)=>{
+              alert("Vehicle has been added !");
+              this.getAllVehicles();
+              this.loadBranches();
+            },
+            (error)=>{
+              alert("Vehicle is NOT added !")
+            }
+            )
+      }else{
+        alert("Branch is not exist !")
+      }
+    })
+ }
+
+
 
 // ============= UPDATE VEHICLE============
 

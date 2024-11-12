@@ -32,8 +32,10 @@
                         <td>{{contact.contact}}</td>
                         <td>{{contact.DrivingLicenseNumber}}</td>
                         <td>{{contact.vehicleID}}</td>
-                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setVehicleID(contact.vehicleID)">Confirm rent</button></td>
-                        <td><button class="btn btn-secondary" (click)="deleteDailyContact(contact.dailyContactID)">Cancle</button></td>
+                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                (click)="setVehicleID(contact.vehicleID)">Confirm rent</button></td>
+                        <td><button class="btn btn-secondary"
+                                (click)="deleteDailyContact(contact.dailyContactID)">Cancle</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -41,10 +43,10 @@
     </div>
 
 
-    
-     <!-- ======================================= UPDATING MODEL ===================================== -->
 
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- ======================================= UPDATING MODEL ===================================== -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -68,15 +70,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Pick-up Date:</label>
-                        <input type="text" class="form-control" id="recipient-name"  [(ngModel)]="rental.pickUpDate">
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rental.pickUpDate">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Drop-off Date:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rental.dropOffDate" >
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rental.dropOffDate">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  (click)="addRental()">ADD RENTAL</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="addRental()">ADD
+                        RENTAL</button>
                 </div>
             </div>
         </div>

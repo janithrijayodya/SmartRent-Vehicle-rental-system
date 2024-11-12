@@ -37,67 +37,76 @@
                 <main>
                     <div class="row g-5" id="CustomerForm">
                         <div class="col-md-12 col-lg-12">
-                                <div class="row g-3">
-                                    <div class="col-sm-6">
-                                        <label for="lastName" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="txtcustomer" placeholder="" value="" [(ngModel)]="customer.customerName"  [(ngModel)]="searchedCustomer.customerName"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <label for="license" class="form-label">DLicense No</label>
-                                        <input type="text" class="form-control" id="txtcustomer" placeholder="" value="" [(ngModel)]="customer.DLNumber" [(ngModel)]="searchedCustomer.DLNumber"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid first name is required.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <label for="contactNo" class="form-label">Contact No</label>
-                                        <input type="text" class="form-control" id="txtcustomer" placeholder="" value="" [(ngModel)]="customer.customerContact" [(ngModel)]="searchedCustomer.customerContact"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                        <label for="state" class="form-label">Branch</label>
-                                        <select class="form-select" id="state" required id="txtcustomer" [(ngModel)]="searchedCustomer.branchID">
-                                            <option value="">Choose...</option>
-                                            <option *ngFor=" let branch of branchList" [value]="branch.branchID">{{branch.branchID}}</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid state.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="txtcustomer" placeholder="" [(ngModel)]="customer.customerEmail" [(ngModel)]="searchedCustomer.customerEmail">
-                                        <div class="invalid-feedback">
-                                            Please enter a valid email address for shipping updates.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="address" class="form-label">Address</label>
-                                        <input type="text" class="form-control" id="txtcustomer" placeholder="" [(ngModel)]="customer.customerAddress" [(ngModel)]="searchedCustomer.customerAddress"
-                                            required>
-                                        <div class="invalid-feedback">
-                                            Please enter your shipping address.
-                                        </div>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="txtcustomer" placeholder="" value=""
+                                        [(ngModel)]="customer.customerName" [(ngModel)]="searchedCustomer.customerName"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
                                     </div>
                                 </div>
 
-                                <hr class="my-4">
+                                <div class="col-sm-6">
+                                    <label for="license" class="form-label">DLicense No</label>
+                                    <input type="text" class="form-control" id="txtcustomer" placeholder="" value=""
+                                        [(ngModel)]="customer.DLNumber" [(ngModel)]="searchedCustomer.DLNumber"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
 
-                                <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn" (click)="addCustomer()">ADD
-                                    CUSTOMER</button><br><br>
+                                <div class="col-sm-6">
+                                    <label for="contactNo" class="form-label">Contact No</label>
+                                    <input type="text" class="form-control" id="txtcustomer" placeholder="" value=""
+                                        [(ngModel)]="customer.customerContact"
+                                        [(ngModel)]="searchedCustomer.customerContact" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="state" class="form-label">Branch</label>
+                                    <select class="form-select" id="state" required id="txtcustomer"
+                                        [(ngModel)]="searchedCustomer.branchID">
+                                        <option value="">Choose...</option>
+                                        <option *ngFor=" let branch of branchList" [value]="branch.branchID">
+                                            {{branch.branchID}}</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="txtcustomer" placeholder=""
+                                        [(ngModel)]="customer.customerEmail"
+                                        [(ngModel)]="searchedCustomer.customerEmail">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="txtcustomer" placeholder=""
+                                        [(ngModel)]="customer.customerAddress"
+                                        [(ngModel)]="searchedCustomer.customerAddress" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn"
+                                (click)="addCustomer()">ADD
+                                CUSTOMER</button><br><br>
                         </div>
                     </div>
                 </main>
@@ -124,10 +133,10 @@
                         <td>{{customer.DLNumber}}</td>
                         <td>{{customer.customerContact}}</td>
                         <td><button class="btn btn-danger" (click)="deleteCustomerByID(customer.customerID)"><i
-                            class="bi bi-trash3"></i></button></td>
-                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="viewUpdateModel(customer)"
-                        ><i class="bi bi-pencil-square"></i></button></td>
-           
+                                    class="bi bi-trash3"></i></button></td>
+                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                (click)="viewUpdateModel(customer)"><i class="bi bi-pencil-square"></i></button></td>
+
                     </tr>
                 </tbody>
             </table>
@@ -146,7 +155,8 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="viewCustomer.customerName">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="viewCustomer.customerName">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">DLicense number:</label>
@@ -154,7 +164,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Contact No:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="viewCustomer.customerContact">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="viewCustomer.customerContact">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Branch:</label>
@@ -162,15 +173,18 @@
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="viewCustomer.customerEmail">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="viewCustomer.customerEmail">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Address:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="viewCustomer.customerAddress">
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="viewCustomer.customerAddress">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="updateCustomer()">Update</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="updateCustomer()">Update</button>
                 </div>
             </div>
         </div>

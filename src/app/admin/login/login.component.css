@@ -10,7 +10,7 @@
     transition: .4s ease-in-out;
     width: 40%;
     margin-left: 30vw;
-    height: 25vw;
+    /* height: 25vw; */
   }
   
   .form:hover {

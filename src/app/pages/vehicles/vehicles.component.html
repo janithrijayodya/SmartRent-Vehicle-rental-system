@@ -1,73 +1,76 @@
+<div class="row">
+  <app-customer-header></app-customer-header>
+</div>
 
-    <div class="row">
-        <app-customer-header></app-customer-header>
-    </div>
+<div class="row" id="secondSection">
+  <div class="col-3">
+    <h1 class="text-left" id="brandName">SMART<span id="brand">RENT</span></h1>
 
-    <div class="row" id="secondSection">
-        <div class="col-3">
-            <h1 class="text-left" id="brandName">SMART<span id="brand">RENT</span></h1>
-
-            <div class="flex-shrink-0 p-3" style="width: 280px;">
-                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-                  <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-                  <span class="fs-5 fw-semibold">Collapsible</span>
-                </a>
-                <ul class="list-unstyled ps-0">
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                      <p>Type</p>
-                    </button>
-                    <div class="collapse show" id="home-collapse">
-                      <button class="btn btn-secondary me-2 mb-2" (click)="btnType('car')">Car</button>
-                      <button class="btn btn-secondary me-2 mb-2" (click)="btnType('van')">Van</button>
-                      <button class="btn btn-secondary me-2 mb-2" (click)="btnType('jip')">Jip</button>
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        <p>Colour</p>
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('black')">Black</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('white')">White</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('ash')">Ash</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('red')">Red</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('blue')">Blue</button>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                        <p>Model</p>
-                    </button>
-                    <div class="collapse" id="orders-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Toyota Corolla')">Toyota Corolla</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Suzuki Alto')">Suzuki Alto</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Honda Fit')">Honda Fit</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Toyota Prius')">Toyota Prius</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Suzuki Wagon R')">Suzuki Wagon R</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Toyota Axio')">Toyota Axio</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Honda Vezel')">Honda Vezel</button>
-                        <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Mitsubishi Montero')">Mitsubishi Montero</button>
-
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="border-top my-3"></li>
-                </ul>
-              </div>
-            
-        </div>
-
-   
-        <div class="col-9">
-          <h3>Choose Your Vehicle</h3>
-          <div class="vehicle-container">
-            <div *ngFor="let vehicle of vehicleList">
-              <app-vehicle-card [vehicleInformation]="vehicle"></app-vehicle-card>      
-            </div>
+    <div class="flex-shrink-0 p-3" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+        <svg class="bi pe-none me-2" width="30" height="24">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-5 fw-semibold">Collapsible</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            <p>Type</p>
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <button class="btn btn-secondary me-2 mb-2" (click)="btnType('car')">Car</button>
+            <button class="btn btn-secondary me-2 mb-2" (click)="btnType('van')">Van</button>
+            <button class="btn btn-secondary me-2 mb-2" (click)="btnType('jip')">Jip</button>
           </div>
-        </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            <p>Colour</p>
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('black')">Black</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('white')">White</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('ash')">Ash</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('red')">Red</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnColour('blue')">Blue</button>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            <p>Model</p>
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Toyota Corolla')">Toyota Corolla</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Suzuki Alto')">Suzuki Alto</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Honda Fit')">Honda Fit</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Toyota Prius')">Toyota Prius</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Suzuki Wagon R')">Suzuki Wagon R</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Toyota Axio')">Toyota Axio</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Honda Vezel')">Honda Vezel</button>
+              <button class="btn btn-secondary me-2 mb-2" (click)="btnModel('Mitsubishi Montero')">Mitsubishi
+                Montero</button>
+
+            </ul>
+          </div>
+        </li>
+        <li class="border-top my-3"></li>
+      </ul>
     </div>
+  </div>
+
+  <div class="col-9">
+    <h3>Choose Your Vehicle</h3>
+    <div class="vehicle-container">
+      <div *ngFor="let vehicle of vehicleList">
+        <app-vehicle-card [vehicleInformation]="vehicle"></app-vehicle-card>
+      </div>
+    </div>
+  </div>
+</div>
