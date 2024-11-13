@@ -14,36 +14,29 @@
         </div>
 
         <div class="col-5">
-            <form class="form">
+            <div class="form">
                 <p class="title">Contact </p>
                 <p class="message">Contact us to get more details. </p>
-                <div class="flex">
-                    <label>
-                        <input class="input" type="text" placeholder="" required="">
-                        <span>Firstname</span>
-                    </label>
-
-                    <label>
-                        <input class="input" type="text" placeholder="" required="">
-                        <span>Lastname</span>
-                    </label>
-                </div>
-
                 <label>
-                    <input class="input" type="email" placeholder="" required="">
-                    <span>Address</span>
+                    <input class="input" type="text" placeholder="" required="" [(ngModel)]="dailyContact.name">
+                    <span>Name</span>
                 </label>
 
                 <label>
-                    <input class="input" type="password" placeholder="" required="">
-                    <span>Email</span>
+                    <input class="input" type="email" placeholder="" required="" [(ngModel)]="dailyContact.vehicleID">
+                    <span>Vehicle ID</span>
+                </label>
+
+                <label>
+                    <input class="input" type="password" placeholder="" required="" [(ngModel)]="dailyContact.DrivingLicenseNumber">
+                    <span>DL Number</span>
                 </label>
                 <label>
-                    <input class="input" type="password" placeholder="" required="">
+                    <input class="input" type="password" placeholder="" required="" [(ngModel)]="dailyContact.contact">
                     <span>Contact Number</span>
                 </label>
-                <button class="submit">Submit</button>
-            </form>
+                <button class="submit" (click)="addContact()">Submit</button>
+            </div>
         </div>
     </div>
 

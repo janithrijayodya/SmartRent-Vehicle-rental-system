@@ -36,15 +36,33 @@ export class EmployeeManageComponent {
     employeeAddress : "",
     employeeContact : "",
     employeePosition : "",
-    branchID : ""
+    branchID: "" 
+
   };
 
   public addEmployee(){
-    this.http.post(" http://localhost:8080/employee/add_employee",this.employee).subscribe(data=>{
-      alert("Employee has been added !");
-      this.getAllEmployees();
-      this.loadBranches();
-    })
+    // console.log(this.employee.branchID);
+    if (!this.employee.branchID) {
+      alert("Branch ID is required!");
+      return;
+  }
+    this.http.get(`http://localhost:8080/branch/search_by_branchID/${this.employee.branchID}`).subscribe(
+      data=>{
+      // console.log(this.employee);
+            this.http.post(" http://localhost:8080/employee/add_employee",this.employee).subscribe(
+              (response)=>{
+                alert("Employee has been added !");
+                this.getAllEmployees();
+                this.loadBranches();
+                },
+              (error)=>{
+                alert("Employee is not added !");
+              });
+     
+      },
+    error=>{
+      alert("error fetching branch data");
+    });
   }
 
   // ========== DELETE EMPLOYEE ==========
