@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-daily-contact',
   standalone: true,
-  imports: [AdminHeaderComponent,CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './daily-contact.component.html',
   styleUrl: './daily-contact.component.css'
 })
@@ -45,7 +45,7 @@ public getAllVehicles(){
     // =============== DELETE CONTACT==========
 
     public deleteDailyContact(contactID:any){
-      this.http.delete(`http://localhost:8080/dailyContact/delete_by_id/${contactID}`).subscribe(data=>{
+      this.http.delete(`http://localhost:8080/dailyContact/delete_by_id/${contactID}`,{ responseType: 'text' }).subscribe(data=>{
         this.getAllContacts();
       })
     }
@@ -70,7 +70,7 @@ public getAllVehicles(){
     
     public addRental(){
       console.log(this.rental);
-      this.http.post(" http://localhost:8080/rental/add_rental", this.rental).subscribe(data=>{
+      this.http.post(" http://localhost:8080/rental/add_rental", this.rental,{ responseType: 'text' }).subscribe(data=>{
         alert("Success !")
         this.getAllCustomers();
         this.getAllVehicles();

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-customer',
   standalone: true,
-  imports: [AdminHeaderComponent,FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './customer.component.html',
   styleUrl: './customer.component.css'
 })
@@ -40,7 +40,7 @@ export class CustomerComponent {
   }
 
   public addCustomer(){
-    this.http.post(" http://localhost:8080/customer/add_customer", this.customer).subscribe(data=>{
+    this.http.post(" http://localhost:8080/customer/add_customer", this.customer,{ responseType: 'text' }).subscribe(data=>{
       alert("Customerr has benn added!");
       this.getAllCustomers();
     })
@@ -59,7 +59,7 @@ export class CustomerComponent {
   // ============= DELETE CUSTOMER==============
 
   public deleteCustomerByID(customerID:any){
-    this.http.delete(`http://localhost:8080/customer/delete_by_id/${customerID}`).subscribe(data=>{
+    this.http.delete(`http://localhost:8080/customer/delete_by_id/${customerID}`,{ responseType: 'text' }).subscribe(data=>{
       alert("Customer has been deleted !")
       this.getAllCustomers();
     })
@@ -74,7 +74,7 @@ export class CustomerComponent {
   }
 
   public updateCustomer(){
-    this.http.put(" http://localhost:8080/customer/update_customer",this.viewCustomer).subscribe(data=>{
+    this.http.put(" http://localhost:8080/customer/update_customer",this.viewCustomer,{ responseType: 'text' }).subscribe(data=>{
       alert("Customer has been updated !");
       this.getAllCustomers();
     })

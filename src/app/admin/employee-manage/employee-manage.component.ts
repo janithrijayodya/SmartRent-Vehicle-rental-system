@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-employee-manage',
   standalone: true,
-  imports: [AdminHeaderComponent,CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './employee-manage.component.html',
   styleUrl: './employee-manage.component.css'
 })
@@ -49,7 +49,7 @@ export class EmployeeManageComponent {
     this.http.get(`http://localhost:8080/branch/search_by_branchID/${this.employee.branchID}`).subscribe(
       data=>{
       // console.log(this.employee);
-            this.http.post(" http://localhost:8080/employee/add_employee",this.employee).subscribe(
+            this.http.post(" http://localhost:8080/employee/add_employee",this.employee,{ responseType: 'text' }).subscribe(
               (response)=>{
                 alert("Employee has been added !");
                 this.getAllEmployees();
@@ -68,7 +68,7 @@ export class EmployeeManageComponent {
   // ========== DELETE EMPLOYEE ==========
 
   public deleteEmployee(employeeID:any){
-    this.http.delete(`http://localhost:8080/employee/delete_employee_by_id/${employeeID}`).subscribe(data=>{
+    this.http.delete(`http://localhost:8080/employee/delete_employee_by_id/${employeeID}`,{ responseType: 'text' }).subscribe(data=>{
       alert("Employee has been deleted !");
       this.getAllEmployees();
       this.loadBranches();
@@ -96,7 +96,7 @@ export class EmployeeManageComponent {
   }
 
   public updateEmployee(){
-    this.http.put(" http://localhost:8080/employee/update_employee",this.searchedEmployee).subscribe(data=>{
+    this.http.put(" http://localhost:8080/employee/update_employee",this.searchedEmployee,{ responseType: 'text' }).subscribe(data=>{
       this.getAllEmployees();
       this.loadBranches();
     })

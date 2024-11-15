@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-rentals',
   standalone: true,
-  imports: [AdminHeaderComponent,CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './rentals.component.html',
   styleUrl: './rentals.component.css'
 })
@@ -54,14 +54,18 @@ public rental:any={
   pickUpDate: "",
   dropOffDate: "",
   vehicleID: "",
-  customerID: ""
+  customerID: "",
+  email:""
 }
 
 public addRental(){
-  this.http.post(" http://localhost:8080/rental/add_rental", this.rental).subscribe(data=>{
-    alert("Success !")
-    this.getAllCustomers();
+  this.http.post(" http://localhost:8080/rental/add_rental", this.rental,{ responseType: 'text' }).subscribe(data=>{
+    alert("Rental is added !")
+    this.http.get(`http://localhost:8080/email/sendEmail/${this.rental.email}`,{responseType:'text'}).subscribe(data=>{
+      this.getAllCustomers();
     this.getAllVehicles();
+    })
+    
   })
 }
 
@@ -74,7 +78,7 @@ public viewSearchedRental(rental:any){
 }
 
 public updateRental(){
-  this.http.put(" http://localhost:8080/rental/update_rental", this.searchedRental).subscribe(data=>{
+  this.http.put(" http://localhost:8080/rental/update_rental", this.searchedRental,{ responseType: 'text' }).subscribe(data=>{
     alert("updated !");
     this.getAllRentals();
     this.getAllCustomers();
@@ -85,7 +89,7 @@ public updateRental(){
 // =============== DELETE RENTAL====================
 
 public deleteRentalByID(rentalID:any){
-  this.http.delete(`http://localhost:8080/rental/delete_rental_by_id/${rentalID}`).subscribe(data=>{
+  this.http.delete(`http://localhost:8080/rental/delete_rental_by_id/${rentalID}`,{ responseType: 'text' }).subscribe(data=>{
     alert("Removed !");
     this.getAllCustomers();
     this.getAllRentals();

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-previouse-rentals',
   standalone: true,
-  imports: [AdminHeaderComponent,FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './previouse-rentals.component.html',
   styleUrl: './previouse-rentals.component.css'
 })

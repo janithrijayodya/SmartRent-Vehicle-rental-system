@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-branch-manage',
   standalone: true,
-  imports: [AdminHeaderComponent,FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './branch-manage.component.html',
   styleUrl: './branch-manage.component.css'
 })
@@ -27,7 +27,7 @@ export class BranchManageComponent {
      
   public addBranch(){
     console.log(this.branch); 
-    this.http.post(" http://localhost:8080/branch/add_branch",this.branch).subscribe(data=>{
+    this.http.post(" http://localhost:8080/branch/add_branch",this.branch,{ responseType: 'text' }).subscribe(data=>{
       alert("Branch has been added !");
     })
   }
@@ -52,7 +52,7 @@ export class BranchManageComponent {
 
   public deleteBranchByID(branchID:any){
     console.log(branchID);
-    this.http.delete(`http://localhost:8080/branch/delete_branch_by_branchID/${branchID}`).subscribe(data=>{
+    this.http.delete(`http://localhost:8080/branch/delete_branch_by_branchID/${branchID}`,{ responseType: 'text' }).subscribe(data=>{
       alert("branch deleted !");
       this.loadTable();
     })
@@ -65,7 +65,7 @@ export class BranchManageComponent {
   }
 
   public saveUpdatedBranch(){
-    this.http.put("http://localhost:8080/branch/update_by_branchID",this.branchTemp).subscribe(data=>{
+    this.http.put("http://localhost:8080/branch/update_by_branchID",this.branchTemp,{ responseType: 'text' }).subscribe(data=>{
       alert("branch updated");
     })
   }

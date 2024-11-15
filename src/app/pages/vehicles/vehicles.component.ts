@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-vehicles',
   standalone: true,
-  imports: [CustomerHeaderComponent, VehicleCardComponent,CommonModule,FormsModule],
+  imports: [ VehicleCardComponent,CommonModule,FormsModule],
   templateUrl: './vehicles.component.html',
   styleUrl: './vehicles.component.css'
 })
