@@ -13,6 +13,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class BranchManageComponent {
 
+  constructor(private http:HttpClient){
+    this.loadTable();
+  }
+  
+  // ============ ADD BRANCH=============
+
   public branch:any = {
     location :"" ,
     address : "",
@@ -20,17 +26,20 @@ export class BranchManageComponent {
     branchContact : "",
     password:""
   };
-
-  constructor(private http:HttpClient){
-    this.loadTable();
-  }
      
   public addBranch(){
     console.log(this.branch); 
-    this.http.post(" http://localhost:8080/branch/add_branch",this.branch,{ responseType: 'text' }).subscribe(data=>{
-      alert("Branch has been added !");
-    })
+    this.http.post(" http://localhost:8080/branch/add_branch",this.branch,{ responseType: 'text' }).subscribe(
+      data=>{
+        this.clearFprm();
+        this.loadTable();
+      },
+      error=>{
+        alert("Branch is not added !");
+      })
   }
+
+// ==============SEARCH BY LOCATION===========
 
   public searchedBranch:any ={};
   public location:any;
@@ -38,8 +47,11 @@ export class BranchManageComponent {
   public searchByLocation(){
     this.http.get(`http://localhost:8080/branch/search_by_location/${this.location}`).subscribe(data=>{
       this.searchedBranch=data;
+      this.location="";
     })
   }
+
+  // ==========GET ALL BRANCHES===========
 
   public branchList:any =[];
 
@@ -50,13 +62,22 @@ export class BranchManageComponent {
       })
   }
 
+  // ===========DELETE BRANCH=============
+
   public deleteBranchByID(branchID:any){
+    
     console.log(branchID);
-    this.http.delete(`http://localhost:8080/branch/delete_branch_by_branchID/${branchID}`,{ responseType: 'text' }).subscribe(data=>{
-      alert("branch deleted !");
-      this.loadTable();
-    })
+    this.http.delete(`http://localhost:8080/branch/delete_branch_by_branchID/${branchID}`,{ responseType: 'text' }).subscribe(
+      data=>{
+        alert("branch deleted !");
+        this.loadTable();
+      },
+      error=>{
+        alert("enter a valid Branch")
+      })
   }
+
+  // ========= UPDATE BRANCH==============
 
   public branchTemp : any = {}
   
@@ -68,5 +89,14 @@ export class BranchManageComponent {
     this.http.put("http://localhost:8080/branch/update_by_branchID",this.branchTemp,{ responseType: 'text' }).subscribe(data=>{
       alert("branch updated");
     })
+  }
+
+  // ================CLEAR BRANCH================
+  public clearFprm(){
+    this.branch.location ="" ,
+    this.branch.address = "",
+    this.branch.branchEmail = "",
+    this.branch.branchContact = "",
+    this.branch.password = ""
   }
 }

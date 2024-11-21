@@ -49,18 +49,13 @@
                                     <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
                                         [(ngModel)]="vehicle.model" [(ngModel)]="searchedVehicleByNoPlate.model"
                                         required>
-                                    <div class="invalid-feedback">
-                                        Valid first name is required.
-                                    </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label for="contactNo" class="form-label">Year</label>
                                     <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
                                         [(ngModel)]="vehicle.year" [(ngModel)]="searchedVehicleByNoPlate.year" required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
+                                    
                                 </div>
 
                                 <div class="col-sm-6">
@@ -68,9 +63,6 @@
                                     <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
                                         [(ngModel)]="vehicle.colour" [(ngModel)]="searchedVehicleByNoPlate.colour"
                                         required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
                                 </div>
 
                                 <div class="col-sm-6">
@@ -78,9 +70,6 @@
                                     <input type="text" class="form-control" id="txtVehicle" placeholder="" value=""
                                         [(ngModel)]="vehicle.rentalPrice"
                                         [(ngModel)]="searchedVehicleByNoPlate.rentalPrice" required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -92,9 +81,6 @@
                                         <option>Van</option>
                                         <option>Jip</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -105,9 +91,6 @@
                                         <option *ngFor="let branch of branchList" [value]="branch.branchID">
                                             {{branch.location}}</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
@@ -118,9 +101,6 @@
                                         <option>Available</option>
                                         <option>Unavailable</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
                                 </div>
 
                                 <div class="col-12">
@@ -128,9 +108,6 @@
                                     <input type="email" class="form-control" id="txtVehicle" placeholder=""
                                         [(ngModel)]="vehicle.description"
                                         [(ngModel)]="searchedVehicleByNoPlate.description">
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
                                 </div>
 
                             </div>

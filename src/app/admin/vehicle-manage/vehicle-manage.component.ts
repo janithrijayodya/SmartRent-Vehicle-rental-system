@@ -54,9 +54,9 @@ public addVehicle(){
   this.http.get(`http://localhost:8080/branch/search_by_branchID/${this.vehicle.branchID}`,{ responseType: 'text' }).subscribe(
     data=>{
       if(data){
-          this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle).subscribe(
+          this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle,{ responseType: 'text' }).subscribe(
             (response)=>{
-              alert("Vehicle has been added !");
+              this.clearForm();
               this.getAllVehicles();
               this.loadBranches();
             },
@@ -107,7 +107,22 @@ public searchedVehicleByNoPlate:any ={};
 public searchByNoPlate(){
    this.http.get(`http://localhost:8080/vehicle/search_vehicle_by_noPlate/${this.NoPlate}`).subscribe(data=>{
       this.searchedVehicleByNoPlate = data;
+      this.NoPlate="";
    })
+}
+
+// =======CLEAR FORM============
+
+public clearForm(){
+  this.vehicle.noPlate = '',
+  this.vehicle.model = "",
+  this.vehicle.year = "",
+  this.vehicle.colour = "",
+  this.vehicle.type = "",
+  this.vehicle.description = "",
+  this.vehicle.rentalPrice = "",
+  this.vehicle.status = "",
+  this.vehicle.branchID=""
 }
   
 }

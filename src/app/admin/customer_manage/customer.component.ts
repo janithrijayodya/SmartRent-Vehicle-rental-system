@@ -43,6 +43,7 @@ export class CustomerComponent {
     this.http.post(" http://localhost:8080/customer/add_customer", this.customer,{ responseType: 'text' }).subscribe(data=>{
       alert("Customerr has benn added!");
       this.getAllCustomers();
+      this.clrarForm();
     })
   }
 
@@ -90,5 +91,16 @@ export class CustomerComponent {
     this.http.get(`http://localhost:8080/customer/search_customer/${this.DLicenseNumber}`).subscribe(data=>{
         this.searchedCustomer=data;
     })
+  }
+
+
+  // ===========CLEAR FORM==============
+
+  public clrarForm(){
+    this.customer.DLNumber='',
+    this.customer.customerName='',
+    this.customer.customerAddress='',
+    this.customer.customerContact='',
+    this.customer.customerEmail=''
   }
 }

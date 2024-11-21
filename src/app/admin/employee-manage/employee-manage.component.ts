@@ -51,7 +51,7 @@ export class EmployeeManageComponent {
       // console.log(this.employee);
             this.http.post(" http://localhost:8080/employee/add_employee",this.employee,{ responseType: 'text' }).subscribe(
               (response)=>{
-                alert("Employee has been added !");
+                this.clearForm();
                 this.getAllEmployees();
                 this.loadBranches();
                 },
@@ -111,7 +111,19 @@ export class EmployeeManageComponent {
   public searchEmployeeByNIC(){
     this.http.get(`http://localhost:8080/employee/search_employee_by_nic/${this.nic}`).subscribe(data=>{
         this.searchedEmployeeObject=data;
+        this.nic="";
     })
+  }
+
+  // ============CLEAR FORM=============
+
+  public clearForm(){
+    this.employee.nic = "",
+    this.employee.employeeName = "",
+    this.employee.employeeAddress = "",
+    this.employee.employeeContact = "",
+    this.employee.employeePosition = "",
+    this.employee.branchID= "" 
   }
 
 }

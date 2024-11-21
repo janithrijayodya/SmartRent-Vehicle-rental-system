@@ -122,4 +122,15 @@ export class RentalsComponent {
       this.getAllVehicles();
     })
   }
+
+  // =============== CLEAR FORM=============
+
+  public clearForm(){
+    this.rental.noOfDays= "",
+    this.rental.pickUpDate= "",
+    this.rental.dropOffDate= "",
+    this.rental.vehicleID= "",
+    this.rental.customerID= "",
+    this.rental.email= ""
+  }
 }

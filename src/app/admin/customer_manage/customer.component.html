@@ -39,9 +39,6 @@
                                     <input type="text" class="form-control" id="txtcustomer" placeholder="" value=""
                                         [(ngModel)]="customer.customerName" [(ngModel)]="searchedCustomer.customerName"
                                         required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
                                 </div>
 
                                 <div class="col-sm-6">
@@ -49,9 +46,6 @@
                                     <input type="text" class="form-control" id="txtcustomer" placeholder="" value=""
                                         [(ngModel)]="customer.DLNumber" [(ngModel)]="searchedCustomer.DLNumber"
                                         required>
-                                    <div class="invalid-feedback">
-                                        Valid first name is required.
-                                    </div>
                                 </div>
 
                                 <div class="col-sm-6">
@@ -59,22 +53,15 @@
                                     <input type="text" class="form-control" id="txtcustomer" placeholder="" value=""
                                         [(ngModel)]="customer.customerContact"
                                         [(ngModel)]="searchedCustomer.customerContact" required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="state" class="form-label">Branch</label>
                                     <select class="form-select" id="state" required id="txtcustomer"
                                         [(ngModel)]="searchedCustomer.branchID">
-                                        <option value="">Choose...</option>
                                         <option *ngFor=" let branch of branchList" [value]="branch.branchID">
-                                            {{branch.branchID}}</option>
+                                            {{branch.location}}</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
                                 </div>
 
                                 <div class="col-12">
@@ -82,9 +69,6 @@
                                     <input type="email" class="form-control" id="txtcustomer" placeholder=""
                                         [(ngModel)]="customer.customerEmail"
                                         [(ngModel)]="searchedCustomer.customerEmail">
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
                                 </div>
 
                                 <div class="col-12">
@@ -92,9 +76,6 @@
                                     <input type="text" class="form-control" id="txtcustomer" placeholder=""
                                         [(ngModel)]="customer.customerAddress"
                                         [(ngModel)]="searchedCustomer.customerAddress" required>
-                                    <div class="invalid-feedback">
-                                        Please enter your shipping address.
-                                    </div>
                                 </div>
                             </div>
 
@@ -172,10 +153,6 @@
                         <label for="recipient-name" class="col-form-label">Contact No:</label>
                         <input type="text" class="form-control" id="recipient-name"
                             [(ngModel)]="viewCustomer.customerContact">
-                    </div>
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Branch:</label>
-                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="viewCustomer.branchID">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Email:</label>

@@ -26,9 +26,9 @@
     background-color: #c0c0c0;
     color:black;
 }
-.employee{
+.rental{
     background-color: #333333;
-    height: 45vw;
+    height: auto;
 }
 #txtemployee{
     background-color: #333333;
