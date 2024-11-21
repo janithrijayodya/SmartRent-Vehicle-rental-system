@@ -4,6 +4,7 @@ import { AdminHeaderComponent } from '../admin-header/admin-header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer',
@@ -41,7 +42,13 @@ export class CustomerComponent {
 
   public addCustomer(){
     this.http.post(" http://localhost:8080/customer/add_customer", this.customer,{ responseType: 'text' }).subscribe(data=>{
-      alert("Customerr has benn added!");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Customer has been added",
+        showConfirmButton: false,
+        timer: 1500
+      });
       this.getAllCustomers();
       this.clrarForm();
     })

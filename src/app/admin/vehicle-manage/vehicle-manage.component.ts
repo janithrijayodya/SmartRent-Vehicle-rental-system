@@ -3,6 +3,7 @@ import { AdminHeaderComponent } from '../admin-header/admin-header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vehicle-manage',
@@ -56,6 +57,13 @@ public addVehicle(){
       if(data){
           this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle,{ responseType: 'text' }).subscribe(
             (response)=>{
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Vehicle has been added",
+                showConfirmButton: false,
+                timer: 1500
+              });
               this.clearForm();
               this.getAllVehicles();
               this.loadBranches();

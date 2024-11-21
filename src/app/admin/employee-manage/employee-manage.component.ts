@@ -3,6 +3,7 @@ import { AdminHeaderComponent } from '../admin-header/admin-header.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-employee-manage',
@@ -51,6 +52,13 @@ export class EmployeeManageComponent {
       // console.log(this.employee);
             this.http.post(" http://localhost:8080/employee/add_employee",this.employee,{ responseType: 'text' }).subscribe(
               (response)=>{
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Employee has been added",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
                 this.clearForm();
                 this.getAllEmployees();
                 this.loadBranches();

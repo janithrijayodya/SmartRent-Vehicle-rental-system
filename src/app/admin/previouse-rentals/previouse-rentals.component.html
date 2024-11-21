@@ -41,6 +41,7 @@
                                 <th>No Of Days</th>
                                 <th>Pick-up date</th>
                                 <th>Drop-off date</th>
+                                <th></th>
                             </tr>
                         </thead>
                     </table>
@@ -55,11 +56,42 @@
                                 <td>{{rental.noOfDays}}</td>
                                 <td>{{rental.pickUpDate}}</td>
                                 <td>{{rental.dropOffDate}}</td>
+                                <td><button class="btn btn-secondary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"(click)="generateBill(rental.vehicleID)" >BILL</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Rental Bill</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Rental Price:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="billingVehicle.rentalPrice">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Days:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rentDays">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Hourse:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rentHours">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                      (click)="proceedPayment()" >Proceed</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ import { AdminHeaderComponent } from '../admin-header/admin-header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-branch-manage',
@@ -31,6 +32,14 @@ export class BranchManageComponent {
     console.log(this.branch); 
     this.http.post(" http://localhost:8080/branch/add_branch",this.branch,{ responseType: 'text' }).subscribe(
       data=>{
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Branch has been added",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        
         this.clearFprm();
         this.loadTable();
       },

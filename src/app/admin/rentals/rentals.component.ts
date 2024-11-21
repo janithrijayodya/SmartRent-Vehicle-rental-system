@@ -3,6 +3,7 @@ import { AdminHeaderComponent } from '../admin-header/admin-header.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-rentals',
@@ -59,23 +60,35 @@ export class RentalsComponent {
   }
 
   public addRental() {
-    this.http.post(" http://localhost:8080/rental/add_rental", this.rental, { responseType: 'text' }).subscribe(
-      data => {
-        alert("Rental is added !");
-        this.getAllCustomers();
-        this.getAllVehicles();
-        this.http.get(`http://localhost:8080/email/sendEmail/${this.rental.email}`, { responseType: 'text' }).subscribe(
-          emailData => {
-            //  this.updateVehicleStatus();
-          },
-          emailError => {
-            alert("email faild")
-          })
+    if (!this.rental.email) {
+      alert('Email is required !');
+    }else{
+      this.http.post(" http://localhost:8080/rental/add_rental", this.rental, { responseType: 'text' }).subscribe(
+        data => {
 
-      },
-      error => {
-        alert("rental faild")
-      })
+          this.http.get(`http://localhost:8080/email/sendEmail/${this.rental.email}`, { responseType: 'text' }).subscribe(
+            emailData => {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Rental has been added",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              this.clearForm();
+              this.getAllCustomers();
+              this.getAllVehicles();
+              //  this.updateVehicleStatus();
+            },
+            emailError => {
+              alert("email faild")
+            })
+  
+        },
+        error => {
+          alert("rental faild")
+        })
+    }
   }
 
   // ==============update vehicle status=============
