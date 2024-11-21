@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-vehicle-manage',
   standalone: true,
-  imports: [AdminHeaderComponent,FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './vehicle-manage.component.html',
   styleUrl: './vehicle-manage.component.css'
 })
@@ -51,7 +51,7 @@ public vehicle:any={
 }
 
 public addVehicle(){
-  this.http.get(`http://localhost:8080/branch/search_by_branchID/${this.vehicle.branchID}`).subscribe(
+  this.http.get(`http://localhost:8080/branch/search_by_branchID/${this.vehicle.branchID}`,{ responseType: 'text' }).subscribe(
     data=>{
       if(data){
           this.http.post("http://localhost:8080/vehicle/add_vehicle",this.vehicle).subscribe(
@@ -81,7 +81,7 @@ public viewSearchedVehicle(vehicle:any){
 }
 
 public updateVehicle(){
-  this.http.put(" http://localhost:8080/vehicle/update_vehicle", this.searchedVehicle).subscribe(data=>{
+  this.http.put(" http://localhost:8080/vehicle/update_vehicle", this.searchedVehicle,{ responseType: 'text' }).subscribe(data=>{
     alert("Vehicle has been updated !");
     this.loadBranches;
     this.getAllVehicles;
@@ -91,7 +91,7 @@ public updateVehicle(){
 // ==============DELETE VEHICLE================
 
 public deleteVehicleByID(vehicleID: any){
-  this.http.delete(`http://localhost:8080/vehicle/delete_vehicle_by_id/${vehicleID}`).subscribe(data=>{
+  this.http.delete(`http://localhost:8080/vehicle/delete_vehicle_by_id/${vehicleID}`,{ responseType: 'text' }).subscribe(data=>{
     alert("Vehicle is removed !");
     this.getAllVehicles();
     this.loadBranches();

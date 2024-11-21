@@ -65,15 +65,45 @@ public getAllVehicles(){
       pickUpDate: "",
       dropOffDate: "",
       vehicleID: "",
-      customerID: ""
+      customerID: "",
+      email:""
     }
     
-    public addRental(){
-      console.log(this.rental);
-      this.http.post(" http://localhost:8080/rental/add_rental", this.rental,{ responseType: 'text' }).subscribe(data=>{
-        alert("Success !")
-        this.getAllCustomers();
-        this.getAllVehicles();
-      })
+    public addRental() {
+      this.http.post(" http://localhost:8080/rental/add_rental", this.rental, { responseType: 'text' }).subscribe(
+        data => {
+          alert("Rental is added !");
+          this.getAllCustomers();
+          this.getAllVehicles();
+          this.http.get(`http://localhost:8080/email/sendEmail/${this.rental.email}`, { responseType: 'text' }).subscribe(
+            emailData => {
+              //  this.updateVehicleStatus();
+            },
+            emailError => {
+              alert("email faild")
+            })
+  
+        },
+        error => {
+          alert("rental faild")
+        })
+    }
+  
+    // ==============update vehicle status=============
+    public vehicleUpdateData:any = {
+      vehicleID: this.rental.vehicleID,
+      status: "Unavailable"
+    }
+   
+    public updateVehicleStatus(){
+      // console.log(this.vehicleUpdateData);
+      this.http.put(" http://localhost:8080/vehicle/update_vehicle", this.vehicleUpdateData,{ responseType: 'text' }).subscribe(
+        updateData => {
+          alert("status aupated")
+        },
+        updateError => {
+          alert("not updated")
+        }
+      )
     }
 }

@@ -29,31 +29,39 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table" id="previouseRentalTable">
-                <thead>
-                    <tr>
-                        <th scope="col">Rental ID</th>
-                        <th scope="col">Customer ID</th>
-                        <th scope="col">Vehicle ID</th>
-                        <th scope="col">No of days</th>
-                        <th scope="col">Pick-up date</th>
-                        <th scope="col">Drop-off date</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr *ngFor="let rental of rentalList">
-                        <th scope="row">{{rental.rentalID}}</th>
-                        <td>{{rental.customerID}}</td>
-                        <td>{{rental.vehicleID}}</td>
-                        <td>{{rental.noOfDays}}</td>
-                        <td>{{rental.pickUpDate}}</td>
-                        <td>{{rental.dropOffDate}}</td>
-                        <td><button class="btn btn-secondary">BILL</button></td>
-                    </tr>
-                </tbody>
-            </table>
+            <section>
+                <!--for demo wrap-->
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer ID</th>
+                                <th>Vehicle ID</th>
+                                <th>No Of Days</th>
+                                <th>Pick-up date</th>
+                                <th>Drop-off date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr *ngFor="let rental of rentalList">
+                                <th scope="row">{{rental.rentalID}}</th>
+                                <td>{{rental.customerID}}</td>
+                                <td>{{rental.vehicleID}}</td>
+                                <td>{{rental.noOfDays}}</td>
+                                <td>{{rental.pickUpDate}}</td>
+                                <td>{{rental.dropOffDate}}</td>
+                                <td><button class="btn btn-secondary">BILL</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </div>
-
 </div>

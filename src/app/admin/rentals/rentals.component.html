@@ -8,7 +8,7 @@
 
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-5">
             <div class="container">
                 <main>
                     <div class="row g-5" id="EmployeeForm">
@@ -91,31 +91,40 @@
             </div>
         </div>
 
-        <div class="col-6">
-            <table class="table" id="employeeTable">
-                <thead>
-                    <tr>
-                        <th scope="col">Rental ID</th>
-                        <th scope="col">Customer ID</th>
-                        <th scope="col">Vehicle ID</th>
-                        <th scope="col">No of days</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr *ngFor="let rental of rentalList">
-                        <th scope="row">{{rental.rentalID}}</th>
-                        <td>{{rental.customerID}}</td>
-                        <td>{{rental.vehicleID}}</td>
-                        <td>{{rental.noOfDays}}</td>
-                        <td><button class="btn btn-danger" (click)="deleteRentalByID(rental.rentalID)"><i
-                                    class="bi bi-trash3"></i></button></td>
-                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                (click)="viewSearchedRental(rental)"><i class="bi bi-pencil-square"></i></button></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-7">
+            <section>
+                <!--for demo wrap-->
+                <div class="tbl-header">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Customer ID</th>
+                        <th>Vehicle ID</th>
+                        <th>No Of Days</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="tbl-content">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody class="table-group-divider">
+                        <tr *ngFor="let rental of rentalList">
+                            <th scope="row">{{rental.rentalID}}</th>
+                            <td>{{rental.customerID}}</td>
+                            <td>{{rental.vehicleID}}</td>
+                            <td>{{rental.noOfDays}}</td>
+                            <td><button class="btn btn-danger" (click)="deleteRentalByID(rental.rentalID)"><i
+                                        class="bi bi-trash3"></i></button></td>
+                            <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    (click)="viewSearchedRental(rental)"><i class="bi bi-pencil-square"></i></button></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
         </div>
     </div>
 
@@ -147,6 +156,12 @@
                             <option *ngFor="let customer of customerList" [value]="customer.customerID">
                                 {{customer.customerID}}</option>
                         </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedRental.email">
                     </div>
 
                     <div class="mb-3">

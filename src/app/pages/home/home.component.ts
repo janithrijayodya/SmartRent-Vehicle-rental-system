@@ -5,7 +5,7 @@ import { CustomerHeaderComponent } from "../customer-header/customer-header.comp
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FooterComponent, CustomerHeaderComponent],
+  imports: [FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

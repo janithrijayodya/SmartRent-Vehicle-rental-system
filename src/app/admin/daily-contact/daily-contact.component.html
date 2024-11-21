@@ -9,33 +9,43 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table" id="previouseRentalTable">
-                <thead>
-                    <tr>
-                        <th scope="col">Contact ID</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">DL Number</th>
-                        <th scope="col">Vehicle ID</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr *ngFor="let contact of contactList">
-                        <th scope="row">{{contact.dailyContactID}}</th>
-                        <td>{{contact.name}}</td>
-                        <td>{{contact.contact}}</td>
-                        <td>{{contact.DrivingLicenseNumber}}</td>
-                        <td>{{contact.vehicleID}}</td>
-                        <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                (click)="setVehicleID(contact.vehicleID)">Confirm rent</button></td>
-                        <td><button class="btn btn-secondary"
-                                (click)="deleteDailyContact(contact.dailyContactID)">Cancle</button></td>
-                    </tr>
-                </tbody>
-            </table>
+            <section>
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Contact ID</th>
+                                <th>Name</th>
+                                <th>Contact No:</th>
+                                <th>DL Number</th>
+                                <th>Vehicle ID</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr *ngFor="let contact of contactList">
+                                <th scope="row">{{contact.dailyContactID}}</th>
+                                <td>{{contact.name}}</td>
+                                <td>{{contact.contact}}</td>
+                                <td>{{contact.DrivingLicenseNumber}}</td>
+                                <td>{{contact.vehicleID}}</td>
+                                <td><button class="btn btn-secondary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" (click)="setVehicleID(contact.vehicleID)">Confirm
+                                        rent</button></td>
+                                <td><button class="btn btn-secondary"
+                                        (click)="deleteDailyContact(contact.dailyContactID)">Cancle</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
+
     </div>
 
 
@@ -58,6 +68,11 @@
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Customer ID:</label>
                         <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rental.customerID">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="rental.email">
                     </div>
 
                     <div class="mb-3">

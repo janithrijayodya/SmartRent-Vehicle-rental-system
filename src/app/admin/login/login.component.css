@@ -8,7 +8,7 @@
     background-color: #171717;
     border-radius: 25px;
     transition: .4s ease-in-out;
-    width: 40%;
+    width: 40vw;
     margin-left: 30vw;
     /* height: 25vw; */
   }
@@ -81,7 +81,7 @@
  
   
  .login{
-    height: 45vw;
+    height: 50vw;
     align-items: center;
     display: flex;
  }

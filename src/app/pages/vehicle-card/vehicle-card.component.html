@@ -9,7 +9,8 @@
         <p class="card-text mb-1">Model :{{vehicleInformation.model}}</p>
         <p class="card-text mb-1" id="price">{{vehicleInformation.rentalPrice}}</p>
         <p class="card-text mb-1" id="status">{{vehicleInformation.status}}</p>
-        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Rent now</a>
+        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          (click)="getVehicleID(vehicleInformation.vehicleID)">Rent now</a>
       </div>
     </div>
   </div>
@@ -37,10 +38,6 @@
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Contact No:</label>
             <input type="text" class="form-control" id="recipient-name" [(ngModel)]="customer.customerContact">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Branch:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="vehicleInformation.branchID">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Email:</label>

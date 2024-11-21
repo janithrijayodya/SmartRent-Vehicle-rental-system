@@ -25,17 +25,21 @@ export class VehicleCardComponent {
   }
 
   public addCustomer(){
-    this.http.post(" http://localhost:8080/customer/add_customer", this.customer,{ responseType: 'text' }).subscribe(data=>{
+    this.http.post("http://localhost:8080/customer/add_customer", this.customer,{ responseType: 'text' }).subscribe(data=>{
       this.addDailyContact();
     })
   }
 
-  // public dailyContect:any = {
-  //   name : this.customer.customerName,
-  //   contact : this.customer.customerContact
-  // }
+  // public VehicleID:any ;
 
+  public getVehicleID(vehicleID:any){
+    console.log(vehicleID);
+    this.vehicleInformation.vehicleID=vehicleID;
+  }
+  
   public addDailyContact(){
+    console.log(this.vehicleInformation.vehicleID);
+
     const dailyContect = {
       name: this.customer.customerName, 
       contact: this.customer.customerContact,
@@ -43,7 +47,9 @@ export class VehicleCardComponent {
       vehicleID: this.vehicleInformation.vehicleID
     };
 
-    this.http.post(" http://localhost:8080/dailyContact/add_contact", dailyContect,{ responseType: 'text' }).subscribe(data=>{
+    console.log(dailyContect);
+
+    this.http.post("http://localhost:8080/dailyContact/add_contact", dailyContect,{ responseType: 'text' }).subscribe(data=>{
       alert("You are signed up !");
     })
   }
