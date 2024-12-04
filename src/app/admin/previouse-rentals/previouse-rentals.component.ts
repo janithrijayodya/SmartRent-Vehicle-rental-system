@@ -26,10 +26,10 @@ constructor(private http:HttpClient){
       this.rentalList=data;
      })
   }
-// Corrected Code
+// ======================BILL================
 
 public rentDays: any = "";
-public rentHours: any = "";
+public rentkm: any = "";
 
 public billingVehicle: any = {};
 
@@ -42,7 +42,7 @@ public generateBill(vehicleID: any) {
 }
 
 public proceedPayment() {
-  this.totalPayment = (this.rentDays * this.billingVehicle.rentalPrice) + (this.rentHours * 25);
+  this.totalPayment = (this.rentDays * this.billingVehicle.rentalPrice) + (this.rentkm * 25);
 
   Swal.fire({
     title: "Total amount =>  Rs:"+`${this.totalPayment}`,
@@ -63,6 +63,6 @@ public proceedPayment() {
   });
 
   this.rentDays="";
-  this.rentHours="";
+  this.rentkm="";
 }
 }
